@@ -9,11 +9,12 @@ app.all('*',(req,res,next) => {
 })
 app.all('/',(req,res) => {
     pool.getConnection((err,conn) => {
-        res.json({a:'b'})
+        res.json('接口测试')
         // 释放连接池
         conn.release();
     })
 })
+
 app.use('/login',login);
 // 监听端口
 app.listen(8080, ()=> {
