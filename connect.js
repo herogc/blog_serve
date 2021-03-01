@@ -43,4 +43,4 @@ function reconnect(){
     // 创建连接池
     pool.on('error',err => err.code === 'PROTOCOL_CONNECTION_LOST' && setTimeout(repool,2000))
 }
-module.exports = {pool,Result,router,app};
+module.exports = {pool,router,Result,app};
